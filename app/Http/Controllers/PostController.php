@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    //文章首页列表页面
+    //文章列表页面
     public function index()
     {
         $posts = Post::orderBy('created_at','desc')->paginate(6);
