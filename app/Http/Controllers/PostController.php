@@ -56,6 +56,6 @@ class PostController extends Controller
     //文章删除
     public function delete()
     {
-
+        return;
     }
 }
