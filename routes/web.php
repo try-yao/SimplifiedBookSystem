@@ -27,7 +27,7 @@ Route::group(['prefix' => 'posts'], function () {
     Route::get('/{post}/edit', 'PostController@edit');
     Route::put('/{post}', 'PostController@update');
 //删除文章
-    Route::get('/delete', 'PostController@delete');
+    Route::get('/{post}/delete', 'PostController@delete');
 
 
 //    图片上传

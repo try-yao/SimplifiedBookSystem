@@ -64,9 +64,10 @@ class PostController extends Controller
     }
 
     //文章删除
-    public function delete()
+    public function delete(Post $post)
     {
-        return;
+        $post->delete();
+        return redirect("/posts");
     }
 
     public function imageUpload(Request $request)
