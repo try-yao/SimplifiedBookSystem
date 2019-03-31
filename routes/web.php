@@ -28,4 +28,8 @@ Route::group(['prefix' => 'posts'], function () {
     Route::put('/{post}', 'PostController@update');
 //删除文章
     Route::get('/delete', 'PostController@delete');
+
+
+//    图片上传
+    Route::post('/image/upload', 'PostController@imageUpload');
 });
