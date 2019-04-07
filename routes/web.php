@@ -51,4 +51,8 @@ Route::group(['prefix' => 'posts'], function () {
 
     //提交评论
     Route::post('/{post}/comment','PostController@comment');
+    //点赞
+    Route::get('/{post}/zan','PostController@zan');
+    //取消赞
+    Route::get('/{post}/unzan','PostController@unzan');
 });
