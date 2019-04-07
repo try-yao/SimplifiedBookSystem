@@ -41,7 +41,7 @@
                         </a></p>
 
                     {{--//第三个参数默认省略的就是... 也可以自定义其他的--}}
-                    <p>{!! str_limit($post->content,100,'...') !!}<p class="blog-post-meta">赞 0 | 评论 0</p>
+                    <p>{!! str_limit($post->content,100,'...') !!}<p class="blog-post-meta">赞 0 | 评论 {{$post->comments_count}}</p>
                 </div>
             @endforeach
 

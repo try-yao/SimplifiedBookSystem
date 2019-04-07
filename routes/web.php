@@ -48,4 +48,7 @@ Route::group(['prefix' => 'posts'], function () {
 
 //    图片上传
     Route::post('/image/upload', 'PostController@imageUpload');
+
+    //提交评论
+    Route::post('/{post}/comment','PostController@comment');
 });
