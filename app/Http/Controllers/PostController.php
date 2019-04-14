@@ -7,13 +7,14 @@ use App\Post;
 use App\Zan;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class PostController extends Controller
 {
     //文章列表页面备注
     public function index()
     {
-        $posts = Post::orderBy('created_at','desc')->withCount(["comments","zans"])->paginate(6);
+        $posts = Post::orderBy('created_at','desc')->withCount(["comments","zans"])->paginate(2);
         return view("post/index",compact('posts'));
     }
 
@@ -120,6 +121,19 @@ class PostController extends Controller
     {
         $post->zan(Auth::id())->delete();
         return back();
+    }
+
+    public function search()
+    {
+        //验证
+        $this->validate(request(),[
+            'query' => 'required'
+        ]);
+        //逻辑
+        $query = request('query');
+        $posts = Post::where('title','like','%'.$query.'%')->paginate(2);
+        //渲染
+        return view('post/search',compact('posts','query'));
     }
 
 }

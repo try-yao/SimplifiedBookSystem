@@ -37,6 +37,10 @@ Route::group(['prefix' => 'posts'], function () {
 //创建文章
     Route::get('/create', 'PostController@create');
     Route::post('/', 'PostController@store');
+
+    //文章搜索
+    Route::get('/search', 'PostController@search');
+
     //文章详情页
     Route::get('/{post}', 'PostController@show');
 //编辑文章
