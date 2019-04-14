@@ -31,6 +31,11 @@ Route::get('/user/me/setting', 'UserController@setting');
 //个人设置保存
 Route::post('/user/me/setting', 'UserController@settingStore');
 
+//个人中心
+Route::get('/user/{user}','UserController@show');
+Route::post('/user/{user}/fan','UserController@fan');
+Route::post('/user/{user}/unfan','UserController@unfan');
+
 Route::group(['prefix' => 'posts'], function () {
     //文章列表页
     Route::get('/', 'PostController@index');
