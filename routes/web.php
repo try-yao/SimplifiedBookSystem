@@ -27,9 +27,9 @@ Route::post('/login', 'LoginController@login');
 //登出行为
 Route::get('/logout', 'LoginController@logout');
 //个人设置页面
-Route::get('/user/me/setting', 'UserController@setting');
+Route::get('/user/{user}/setting', 'UserController@setting');
 //个人设置保存
-Route::post('/user/me/setting', 'UserController@settingStore');
+Route::post('/user/{user}/setting', 'UserController@settingStore');
 
 //个人中心
 Route::get('/user/{user}','UserController@show');
