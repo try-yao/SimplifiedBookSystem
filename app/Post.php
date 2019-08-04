@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 class Post extends Model
 {
@@ -28,5 +29,24 @@ class Post extends Model
     public function zans()
     {
         return $this->hasMany(Zan::class);
+    }
+
+    //属于某个作者的文章
+    public function scopeAuthorBy(Builder $builder,$user_id)
+    {
+        return $builder->where('user_id',$user_id);
+    }
+
+    public function postTopics()
+    {
+        return $this->hasMany(PostTopic::class,'post_id','id');
+    }
+
+    //不属于某个专题的文章
+    public function scopeTopicNotBy(Builder $builder,$topic_id)
+    {
+        return $builder->doesntHave('postTopics','and',function ($query) use ($topic_id) {
+            $query->where('topic_id',$topic_id);
+        });
     }
 }
