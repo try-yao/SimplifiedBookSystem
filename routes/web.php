@@ -39,7 +39,7 @@ Route::post('/user/{user}/unfan','UserController@unfan');
 //专题详情页
 Route::get('/topic/{topic}','TopicController@show');
 //专题投稿
-Route::post('/topic/{topic}/submit','TopicController@submit');
+Route::any('/topic/{topic}/submit','TopicController@submit');
 
 Route::group(['prefix' => 'posts'], function () {
     //文章列表页
