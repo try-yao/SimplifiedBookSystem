@@ -69,4 +69,8 @@ Route::group(['prefix' => 'posts'], function () {
     Route::get('/{post}/zan','PostController@zan');
     //取消赞
     Route::get('/{post}/unzan','PostController@unzan');
+
+
 });
+
+include_once('admin.php');
