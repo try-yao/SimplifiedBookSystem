@@ -56,6 +56,12 @@
         "sort-packages": true,
         "optimize-autoloader": true
     },
+    "repositories": {
+        "packagist": {
+            "type": "composer",
+            "url": "https://mirrors.aliyun.com/composer/"
+        }
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }
