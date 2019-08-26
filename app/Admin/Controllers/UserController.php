@@ -39,4 +39,16 @@ class UserController extends Controller
         AdminUser::create(compact('name', 'password'));
         return redirect('admin/users');
     }
+
+    //用户角色页面
+    public function role()
+    {
+        return view('/admin/user/role');
+    }
+
+    //存储用户角色
+    public function storeRole()
+    {
+
+    }
 }
