@@ -45,8 +45,9 @@ class UserController extends Controller
     public function role(AdminUser $user)
     {
         $roles = AdminRole::all();
-        $myRole = $user->roles;
-        return view('/admin/user/role', compact('roles', 'myRole', 'user'));
+        $myRoles = $user->roles;
+
+        return view('/admin/user/role', compact('roles', 'myRoles', 'user'));
     }
 
     //存储用户角色

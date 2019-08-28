@@ -18,8 +18,8 @@ Route::group(['prefix' => 'admin'], function () {
         Route::get('/users', '\App\Admin\Controllers\UserController@index');
         Route::get('/users/create', '\App\Admin\Controllers\UserController@create');
         Route::post('/users/store', '\App\Admin\Controllers\UserController@store');
-        Route::get('/users/{role}/role', '\App\Admin\Controllers\UserController@role');
-        Route::post('/users/{role}/role', '\App\Admin\Controllers\UserController@storeRole');
+        Route::get('/users/{user}/role', '\App\Admin\Controllers\UserController@role');
+        Route::post('/users/{user}/role', '\App\Admin\Controllers\UserController@storeRole');
 
         //角色
         Route::get('/roles', '\App\Admin\Controllers\RoleController@index');
