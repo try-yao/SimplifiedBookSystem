@@ -9,6 +9,6 @@ class AdminPermission extends Model
     //权限属于那些角色
     public function roles()
     {
-        return $this->belongsToMany(AdminRole::calss,'admin_permission_roel','permission_id','role_id')->withPivot(['permission_id','role_id']);
+        return $this->belongsToMany(AdminRole::class,'admin_permission_role','permission_id','role_id')->withPivot(['permission_id','role_id']);
     }
 }
