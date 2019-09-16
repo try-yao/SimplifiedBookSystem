@@ -69,8 +69,9 @@ Route::group(['prefix' => 'posts'], function () {
     Route::get('/{post}/zan','PostController@zan');
     //取消赞
     Route::get('/{post}/unzan','PostController@unzan');
-
-
 });
+
+//通知
+Route::get('/notices','NoticeController@index');
 
 include_once('admin.php');
