@@ -8,6 +8,7 @@
 
 namespace App\Admin\Controllers;
 
+use App\Jobs\SeedMessage;
 use App\Notice;
 
 class NoticeController extends Controller
@@ -33,7 +34,8 @@ class NoticeController extends Controller
            'content' => 'required|string',
         ]);
 
-        Notice::create(request(['title','content']));
+       $notice =  Notice::create(request(['title','content']));
+       dispatch(new SeedMessage($notice));
         return redirect('admin/notices');
     }
 
